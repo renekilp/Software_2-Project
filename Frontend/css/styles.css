@@ -1,0 +1,15 @@
+@font-face {
+    font-family: Jersey, Arial, Helvetica, sans-serif;
+    src: url("../font/Jersey15-Regular.ttf") format("truetype");
+}
+
+html {
+    font-family: Jersey, Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-image: url("taustakuva");
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0em;
+}
