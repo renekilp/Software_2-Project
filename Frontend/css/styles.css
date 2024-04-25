@@ -25,3 +25,17 @@ body {
         padding: 2em;
 
 }
+
+
+/* ------------------------------------------
+  |                                         |
+  |                                         |
+  |      pelilaatikko / gameinterface       |
+  |                                         |
+  |                                         |
+   ------------------------------------------
+*/
+.gameinterface {
+    background-color: black;
+    color: cyan;
+}
