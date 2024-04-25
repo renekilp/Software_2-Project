@@ -14,3 +14,14 @@ body {
     background-attachment: fixed;
     margin: 0em;
 }
+
+/* ------------------------------------------
+   |         Yläpalkki / navbar             |
+   -----------------------------------------
+*/
+.navbar {
+        color: white;
+        background-color: blueviolet;
+        padding: 2em;
+
+}
