@@ -1,4 +1,4 @@
-from Py_Sql import get_random_question
+from Backend.pysql import get_random_question
 from colorama import Fore,init
 init(autoreset=True)
 def quiz():
