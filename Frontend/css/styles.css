@@ -21,8 +21,9 @@ body {
 */
 .navbar {
         color: white;
-        background-color: blueviolet;
-        padding: 2em;
+        font-size: 2em;
+        background-color: rgba(46, 60, 85, 0.826);
+        padding: 0.15em
 
 }
 
@@ -30,12 +31,33 @@ body {
 /* ------------------------------------------
   |                                         |
   |                                         |
-  |      pelilaatikko / gameinterface       |
+  |         sivun pohja / .layout           |
   |                                         |
+  |                                         |
+   ------------------------------------------
+*/
+
+.layout {
+    padding: 2em;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* ------------------------------------------
+  |        (sivun pohja / .layout)          |
+  |       --------------------------        |
+  |      |                          |       |
+  |      | pelilaatikko / .gameint..|       |
+  |      |                          |       |
+  |       --------------------------        |
   |                                         |
    ------------------------------------------
 */
 .gameinterface {
     background-color: black;
+    grid-column: 2;
+    text-align: center;
     color: cyan;
+    height: 35em;
+    width: 55em;
 }
