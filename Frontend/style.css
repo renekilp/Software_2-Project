@@ -1,0 +1,15 @@
+@font-face {
+    font-family: fonttinimi;
+    src: url("fonttitiedosto") format("truetype");
+}
+
+html {
+    font-family: fonttinimi, Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-image: url("fonttitiedosto");
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0em;
+}
