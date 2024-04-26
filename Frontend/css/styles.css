@@ -1,0 +1,63 @@
+@font-face {
+    font-family: Jersey, Arial, Helvetica, sans-serif;
+    src: url("../font/Jersey15-Regular.ttf") format("truetype");
+}
+
+html {
+    font-family: Jersey, Arial, Helvetica, sans-serif;
+}
+
+/* BODY äyh*/
+body {
+    background-image: url("../images/background.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0em;
+}
+
+/* ------------------------------------------
+   |         Yläpalkki / navbar             |
+   -----------------------------------------
+*/
+.navbar {
+        color: white;
+        font-size: 2em;
+        background-color: rgba(46, 60, 85, 0.826);
+        padding: 0.15em
+
+}
+
+
+/* ------------------------------------------
+  |                                         |
+  |                                         |
+  |         sivun pohja / .layout           |
+  |                                         |
+  |                                         |
+   ------------------------------------------
+*/
+
+.layout {
+    padding: 2em;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* ------------------------------------------
+  |        (sivun pohja / .layout)          |
+  |       --------------------------        |
+  |      |                          |       |
+  |      | pelilaatikko / .gameint..|       |
+  |      |                          |       |
+  |       --------------------------        |
+  |                                         |
+   ------------------------------------------
+*/
+.gameinterface {
+    background-color: black;
+    grid-column: 2;
+    text-align: center;
+    color: cyan;
+    height: 35em;
+    width: 55em;
+}
