@@ -1,7 +1,10 @@
 import Backend.pysql as pysql
 from flask import Flask, jsonify
+from flask_cors import CORS
+#pip install flask_cors
 
 app = Flask(__name__)
+CORS(app)
 #approutet kaikille sql hauille
 
 @app.route('/large_airports')
@@ -40,7 +43,8 @@ def travel_co2_route(user_airport, airplane_model):
     result = pysql.travel_co2(user_airport, airplane_model)
     return jsonify(result)
 
-def top_players_route():
+@app.route('/top_players')
+def top_players():
     players = pysql.top_players()
     return jsonify(players)
 
