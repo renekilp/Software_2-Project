@@ -5,8 +5,8 @@ from flask import Flask, jsonify
 app = Flask(__name__)
 #approutet kaikille sql hauille
 
-@app.route('/search_lairport')
-def search_lairport():
+@app.route('/large_airports')
+def large_airports():
     result = pysql.search_large_airports()
     return jsonify(result)
 
@@ -20,8 +20,8 @@ def add_score(player_name, score):
     pysql.new_score(player_name, score)
     return jsonify({'Viesti': 'Score lisätty'})
 
-@app.route('/random_fly')
-def random_fly_route():
+@app.route('/random_flight')
+def random_flight():
     airport = pysql.random_fly()
     return jsonify({'airport': airport})
 
