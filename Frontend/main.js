@@ -73,4 +73,4 @@ async function top_players() {
   }
 }
 
-top_players();
+airports();
