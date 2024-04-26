@@ -1,5 +1,4 @@
 import Backend.pysql as pysql
-import Backend.pyquiz as pyquiz
 from flask import Flask, jsonify
 
 app = Flask(__name__)
