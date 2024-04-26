@@ -11,12 +11,12 @@ def search_lairport():
     return jsonify(result)
 
 @app.route('/random_question')
-def random_question_route():
+def random_question():
     question = pysql.get_random_question()
     return jsonify(question)
 
-@app.route('/new_score/<player_name>/<int:score>')
-def new_score_route(player_name, score):
+@app.route('/addscore/<player_name>/<int:score>')
+def add_score(player_name, score):
     pysql.new_score(player_name, score)
     return jsonify({'Viesti': 'Score lisätty'})
 
