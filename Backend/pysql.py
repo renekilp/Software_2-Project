@@ -11,7 +11,9 @@ connection = mysql.connector.connect(
     password="root",
     autocommit=True
 )
-def query_database(sql,fetchall=True): #Tein täst funktion, niin ei tarvi aina tehä cursor ja execute
+
+
+def query_database(sql, fetchall=True):  # Tein täst funktion, niin ei tarvi aina tehä cursor ja execute
     cursor = connection.cursor()
     cursor.execute(sql)
 
@@ -20,13 +22,14 @@ def query_database(sql,fetchall=True): #Tein täst funktion, niin ei tarvi aina 
     else:
         return cursor.fetchone()
 
-# query_database("SELECT * FROM airport") TestiTesti
 
-def search_large_airports(): # hakee isojen lentokenttien nimet ja sijainnin
+def search_large_airports():  # hakee isojen lentokenttien nimet ja sijainnin
     sql = f"SELECT name, ROUND(latitude_deg, 4), ROUND(longitude_deg, 4) FROM airport WHERE type = 'large_airport'"
-    airports = query_database(sql) # airports = suoritetaan query_database funktio, joka hakee tietokannasta tiedot annetulla sql muuttujalla
+    airports = query_database(
+        sql)  # airports = suoritetaan query_database funktio, joka hakee tietokannasta tiedot annetulla sql muuttujalla
 
     return airports
+
 
 def get_random_question():
     question_count = query_database("SELECT COUNT(*) FROM questions")
@@ -35,16 +38,19 @@ def get_random_question():
     query = query_database(sql)
     return query[0]
 
-def new_score(player_name,score): #tallentaa uuden pistemäärän tietokantaan
+
+def new_score(player_name, score):  # tallentaa uuden pistemäärän tietokantaan
     sql = f"INSERT INTO high_score(player_name,player_score) values ('{player_name}',{score})"  #
     cursor = connection.cursor()
     cursor.execute(sql)
 
-def random_fly(): #lennättää pelaajan uudelle random lentokentälle
+
+def random_fly():  # lennättää pelaajan uudelle random lentokentälle
     possible_airports = search_large_airports()
-    airport_number = random.randint(0,len(possible_airports)-1)
+    airport_number = random.randint(0, len(possible_airports) - 1)
     user_airport = possible_airports[airport_number]
     return user_airport
+
 
 def travel_co2(user_airport, airplane_model):
     next_airport = random_fly()
@@ -68,5 +74,9 @@ def travel_co2(user_airport, airplane_model):
 
     results = [distance, co2, flight_time, next_airport]
     return results
-def top_players(): #hakee top 5 pelaajaa score taulusta
+
+
+def top_players():  # hakee top 5 pelaajaa score taulusta
     sql = f"SELECT player_name,player_score FROM high_score ORDER BY player_score DESC LIMIT 5";
+    query = query_database(sql)
+    return query
