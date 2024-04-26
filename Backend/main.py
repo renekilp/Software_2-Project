@@ -29,7 +29,8 @@ def travel_co2_route(user_airport, airplane_model):
     result = pysql.travel_co2(user_airport, airplane_model)
     return jsonify(result)
 
-def top_players_route():
+@app.route('/top_players')
+def top_players():
     players = pysql.top_players()
     return jsonify(players)
 
