@@ -47,17 +47,19 @@ async function random_fly() {
   }
 }
 
-async function traveling_co2() {
+async function traveling_co2(user_airport, airplane_model) {
   try {
-    const response = await fetch('http://127.0.0.1:3000/travel_co2/<user_airport>/<airplane_model>');
+    const url = `http://127.0.0.1:3000/travel_co2/${user_airport}/${airplane_model}`;
+    const response = await fetch(url);
     const data = await response.json();
     console.log(data);
     return data;
   } catch (error) {
-    console.error('Error fetching random question:', error);
+    console.error('Error fetching CO2 data:', error);
     throw error;
   }
 }
+
 
 async function top_players() {
   try {
