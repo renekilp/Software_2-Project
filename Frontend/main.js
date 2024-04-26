@@ -72,3 +72,5 @@ async function top_players() {
     throw error;
   }
 }
+
+top_players();

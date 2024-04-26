@@ -1,7 +1,9 @@
 import Backend.pysql as pysql
 from flask import Flask, jsonify
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 #approutet kaikille sql hauille
 
 @app.route('/large_airports')
