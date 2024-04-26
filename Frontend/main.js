@@ -1,1 +1,1 @@
-import 'fetchFuncs.js'
+import './fetchFuncs'
