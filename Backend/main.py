@@ -12,7 +12,15 @@ def large_airports():
 @app.route('/random_question')
 def random_question():
     question = pysql.get_random_question()
-    return jsonify(question)
+    response = {
+        'question': question[0],
+        'correct_answer': question[1],
+        'wrong_answer1': question[2],
+        'wrong_answer2': question[3],
+        'wrong_answer3': question[4],
+        'wrong_answer4': question[5],
+    }
+    return jsonify(response)
 
 @app.route('/addscore/<player_name>/<int:score>')
 def add_score(player_name, score):
