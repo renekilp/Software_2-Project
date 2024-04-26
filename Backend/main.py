@@ -33,7 +33,10 @@ def add_score(player_name, score):
 @app.route('/random_flight')
 def random_flight():
     airport = pysql.random_fly()
-    return jsonify({'airport': airport})
+    response = {"airport name": airport[0],
+                "latitude": airport[1],
+                "longitude": airport[2],}
+    return jsonify(response)
 
 @app.route('/travel_co2/<user_airport>/<airplane_model>')
 def travel_co2_route(user_airport, airplane_model):
