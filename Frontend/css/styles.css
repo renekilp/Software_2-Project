@@ -6,6 +6,7 @@
 html {
     font-family: Jersey, Arial, Helvetica, sans-serif;
     color: var(--bundaberg-sand);
+    cursor: url(../images/airplanecursor.svg), auto;
 }
 
 :root {
