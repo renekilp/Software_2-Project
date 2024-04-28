@@ -5,11 +5,18 @@
 
 html {
     font-family: Jersey, Arial, Helvetica, sans-serif;
+    color: var(--bundaberg-sand);
 }
 
+:root {
+    --bundaberg-sand:#FFC18E;
+    --middle-safflower:#CA4E79;
+    --grape-kiss: rgb(122, 64, 105);
+    --chive-bloom: rgba(81, 50, 82, 0.75);
+}
 /* BODY äyh*/
 body {
-    background-image: url("../images/background.jpg");
+    background-image: url("../images/background2.png");
     background-size: cover;
     background-attachment: fixed;
     margin: 0em;
@@ -20,14 +27,27 @@ body {
    -----------------------------------------
 */
 .navbar {
-        color: white;
-        font-size: 2em;
-        background-color: rgba(46, 60, 85, 0.826);
-        padding: 0.15em
-
+    background-color: var(--grape-kiss);
+    padding: 0em;
+    display: grid;
+    grid-template-areas:
+        'logo nav nav nav';
 }
-
-
+.navbar a {
+    color: var(--bundaberg-sand);
+    text-align: center;
+    text-decoration: none;
+    font-size: 2.5em;
+    padding: 0.30em;
+    background-color: var(--grape-kiss);
+}
+.navbar a:hover {
+    background-color: var(--chive-bloom);
+    color: var(--bundaberg-sand);
+}
+#fqlogo {
+    padding-top: 5px;
+}
 /* ------------------------------------------
   |                                         |
   |                                         |
@@ -36,6 +56,28 @@ body {
   |                                         |
    ------------------------------------------
 */
+
+.fqtitle{
+    display: block;
+    margin: auto;
+    padding-top: 4rem;
+}
+
+.base{
+    display: block;
+    margin: auto;
+    background-color: var(--grape-kiss);
+    border-width: 4px;
+    border-style: solid;
+    border-color: var(--bundaberg-sand);
+    width: 80%;
+    overflow: auto;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    position:relative;
+    top: 4rem;
+
+}
 
 .layout {
     padding: 2em;
@@ -55,9 +97,12 @@ body {
 */
 .gameinterface {
     background-color: black;
+    border-width: 0.5rem;
+    border-style: inset;
+    border-color: white;
     grid-column: 2;
     text-align: center;
-    color: cyan;
+    color: var(--middle-safflower);
     height: 35em;
     width: 55em;
 }
