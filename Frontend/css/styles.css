@@ -28,7 +28,7 @@ body {
    -----------------------------------------
 */
 .navbar {
-    background-color: var(--grape-kiss);
+    background-color: rgba(122, 64, 105, 0.75);
     padding: 0em;
     display: grid;
     grid-template-areas:
@@ -40,7 +40,7 @@ body {
     text-decoration: none;
     font-size: 2.5em;
     padding: 0.30em;
-    background-color: var(--grape-kiss);
+    background-color: rgba(122, 64, 105, 0.75);
 }
 .navbar a:hover {
     background-color: var(--chive-bloom);
