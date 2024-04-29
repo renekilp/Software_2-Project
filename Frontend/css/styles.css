@@ -80,10 +80,11 @@ body {
 }
 
 .layout {
-    padding: 2em;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
     position: relative;
+    text-align: center;
+    padding: 2em;
+    height: 35em;
+    width: 55em;
 }
 
 /* ------------------------------------------
@@ -98,15 +99,15 @@ body {
 */
 .gameinterface {
     position: relative;
-    background-color: black;
     border-width: 0.5rem;
     border-style: inset;
     border-color: white;
-    grid-column: 2;
     text-align: center;
-    color: var(--middle-safflower);
-    height: 35em;
-    width: 55em;
+}
+/* mäppi id shitit*/
+#map {
+    width: 100%;
+    height: 100%;
 }
 
 /* ------------------------------------------
@@ -117,7 +118,10 @@ body {
   |                                         |
    ------------------------------------------
 */
+footer {
+    margin: 5em;
 
+}
 .tutbase{
     display: block;
     margin: auto;

@@ -5,9 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"/>
     <link href="css/styles.css" rel="stylesheet">
-    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" defer></script>
+    <!-- LEAFLET MAP-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+    <!---->
+    <!-- LEAFLET JS SCRIPTI -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+    <!---->
     <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.esm.js" defer></script>
     <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.js" defer></script>
     <script src="main.js" defer></script>
@@ -16,9 +24,6 @@
 </head>
 
 <body>
-
-    <div id="map"></div>
-
     <div class="navbar">
         <header>
             <img id="fqlogo" src="images/fqlogo.png" alt="fqlogo">
@@ -36,6 +41,7 @@
         <main>
         <div class="layout">
         <div class="gameinterface">GAME INTERFACE</div>
+        <div id="map"></div>
         </div>
         </main>
     </div>
