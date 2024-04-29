@@ -5,15 +5,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"/>
+    <link href="css/styles.css" rel="stylesheet">
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" defer></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.esm.js" defer></script>
     <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.js" defer></script>
-    <script src="js/main.js" defer></script>
+    <script src="main.js" defer></script>
     <title>FlightQuiz</title>
+    <link rel="icon" href="images/fqlogo.png" type="image">
 </head>
 
 <body>
 
+    <div id="map"></div>
+
+    <div class="navbar">
+        <header>
+            <img id="fqlogo" src="images/fqlogo.png" alt="fqlogo">
+        </header>
+        <a href="main.html">Play</a>
+        <a href="tutorial.html">Tutorial</a>
+        <a href="about.html">About</a>
+    </div>
+
+    <div class ="base">
+        <main>
+
+        </div>
+        </main>
+    </div>
+
+    <footer>FlightQuiz &copy; 2024</footer>
 </body>
 
 </html>
