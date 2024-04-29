@@ -83,6 +83,7 @@ body {
     padding: 2em;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    position: relative;
 }
 
 /* ------------------------------------------
@@ -96,6 +97,7 @@ body {
    ------------------------------------------
 */
 .gameinterface {
+    position: relative;
     background-color: black;
     border-width: 0.5rem;
     border-style: inset;
