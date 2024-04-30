@@ -63,20 +63,19 @@ body {
     margin: auto;
     padding-top: 4rem;
 }
-
 .base{
     display: block;
-    margin: auto;
-    background-color: var(--grape-kiss);
-    border-width: 4px;
-    border-style: solid;
-    border-color: var(--bundaberg-sand);
-    width: 80%;
-    overflow: auto;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    width: 95%; /* TÄÄ VITUN PASKA KUSEE RENE FIXAA ;D*/
     position:relative;
     top: 4rem;
+    margin-left: 1rem;
+    margin-right: 1rem; 
+    padding: 1em;
+
+    background-color: var(--grape-kiss);
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--bundaberg-sand);
 }
 
 .layout {
@@ -85,24 +84,22 @@ body {
     padding: 2em;
     height: 35em;
     width: 55em;
+
+    display: grid;
+    grid-template-areas:
+        'boxi boxi'
+        'boxi boxi';
+    grid-template-rows: auto auto;
+
 }
 
-/* ------------------------------------------
-  |         (main pohja / .layout)          |
-  |       --------------------------        |
-  |      |                          |       |
-  |      | pelilaatikko / .gameint..|       |
-  |      |                          |       |
-  |       --------------------------        |
-  |                                         |
-   ------------------------------------------
-*/
 .gameinterface {
     position: relative;
+    text-align: center;
+
     border-width: 0.5rem;
     border-style: inset;
     border-color: white;
-    text-align: center;
 }
 /* mäppi id shitit*/
 #map {
