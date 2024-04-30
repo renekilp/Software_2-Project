@@ -63,14 +63,25 @@ body {
     margin: auto;
     padding-top: 4rem;
 }
-.base{
-    display: block;
-    width: 95%; /* TÄÄ VITUN PASKA KUSEE RENE FIXAA ;D*/
-    position:relative;
-    top: 4rem;
-    margin-left: 1rem;
-    margin-right: 1rem; 
-    padding: 1em;
+
+
+/*
+______________________
+|       main          |
+|                     |
+|                     |
+|                     |
+|_____________________|
+*/
+
+main {
+    display: grid;
+    width: 100%;
+    height: 40em;
+    grid-template-areas:
+        'boxi boxi';
+    grid-template-rows: auto;
+
 
     background-color: var(--grape-kiss);
     border-width: 1px;
@@ -78,34 +89,37 @@ body {
     border-color: var(--bundaberg-sand);
 }
 
-.layout {
-    position: relative;
+
+
+/*
+_________________________________________
+|                main                   |
+|     _______________ _______________   |
+|    |   maplayout   |  infobox     |   | 
+|    |    ______     |   _______    |   |   
+|    |   | map |     |  | info |    |   |
+|    |   |_____|     |  |______|    |   |
+|    |_______________|______________|   |              
+|_______________________________________|
+*/
+.maplayout {
     text-align: center;
-    padding: 2em;
-    height: 35em;
-    width: 55em;
-
-    display: grid;
-    grid-template-areas:
-        'boxi boxi'
-        'boxi boxi';
-    grid-template-rows: auto auto;
-
-}
-
-.gameinterface {
-    position: relative;
-    text-align: center;
-
-    border-width: 0.5rem;
-    border-style: inset;
-    border-color: white;
+    width: 100%;
+    height: 100%;
 }
 /* mäppi id shitit*/
 #map {
     width: 100%;
     height: 100%;
+    margin: 0em;
+    padding: 0em;
 }
+
+.infobox {
+    text-align: center;
+}
+
+
 
 /* ------------------------------------------
   |             -  tutorial -               |
