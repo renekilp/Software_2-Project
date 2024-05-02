@@ -56,4 +56,8 @@ while (!buttonClicked) {
         let name = prompt('What is your username?')
         fetch.add_score(name,score)
     });
+    document.getElementById('top_players').addEventListener('click', function(event){
+        let tPlayers = fetch.top_players();
+        alert(tPlayers)
+    });
 }
