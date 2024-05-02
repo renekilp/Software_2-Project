@@ -25,33 +25,27 @@ let airplane_model = '';
 airplane_model = '';
 let buttonClicked = false;
 
-document.getElementById('quit_button').
-    addEventListener('click', function(event) {
-      buttonClicked = true;
-    });
+document.getElementById('quit_button').addEventListener('click', function(event) {
+    buttonClicked = true;
+});
 
 while (!buttonClicked) {
-  // plane selection
-  const selection1 = confirm(
-      'Do you want info of our plane models before choosing?');
-  if (selection1 === true) {
-    func.plane_info();
-  } else {
-    break;
-  }
-  airplane_model = func.planeModel();
-  document.getElementById('start_game_button').
-      addEventListener('click', function(event) {
-        let questionData = func.quiz();
-        let userAnswer = prompt(
-            questionData.question + '\n' + questionData.answers);
-        if (userAnswer === questionData.correct_answer) {
-          score += 1;
+    const selection1 = confirm('Do you want info of our plane models before choosing?');
+    if (selection1 === true) {
+        func.plane_info();
+    } else {
+        break;
+    }
+    airplane_model = func.planeModel();
+
+    document.getElementById('start_game_button').addEventListener('click', function(event) {
+        let questioner = func.quiz();
+        let userAnswer = prompt(questioner.question + '\n' + questioner.answers);
+        if (userAnswer === questioner.correct_answer) {
+            score += 1;
+            alert('Correct!')
         } else {
-          break;
+            alert('Incorrect!')
         }
-      });
-
+    });
 }
-}
-
