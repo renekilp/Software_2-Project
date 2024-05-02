@@ -1,12 +1,12 @@
 @font-face {
     font-family: Jersey, Arial, Helvetica, sans-serif;
-    src: url("../font/Jersey15-Regular.ttf") format("truetype");
+    src: url("../static/font/Jersey15-Regular.ttf") format("truetype");
 }
 
 html {
     font-family: Jersey, Arial, Helvetica, sans-serif;
     color: var(--bundaberg-sand);
-    cursor: url(../images/airplanecursor.svg), auto;
+    cursor: url(../static/images/airplanecursor.svg), auto;
 }
 
 :root {
@@ -17,7 +17,7 @@ html {
 }
 /* BODY äyh*/
 body {
-    background-image: url("../images/background2.png");
+    background-image: url("../static/images/background2.png");
     background-size: cover;
     background-attachment: fixed;
     margin: 0em;

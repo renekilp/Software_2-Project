@@ -1,5 +1,5 @@
-import * as fetch from './fetchFuncs';
-import * as func from './functionalities';
+import * as fetch from '../templates/fetchFuncs';
+import * as func from '../templates/functionalities';
 
 // LEAFLET MÄPPI KOODI
 const map = L.map('map').setView([60.223831106748996, 24.758107289511884], 13);

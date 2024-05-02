@@ -6,13 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"/>
-    <link href="css/styles.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
     <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" defer></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.esm.js" defer></script>
     <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.js" defer></script>
-    <script src="main.js" defer></script>
+    <script src="{{ url_for('static', filename='main.js') }}" defer></script>
     <title>FlightQuiz</title>
-    <link rel="icon" href="images/fqlogo.png" type="image">
+    <link rel="icon" href="{{ url_for('static', filename='images/fqlogo.png') }}" type="image/png">
 </head>
 
 <body>
@@ -21,21 +21,18 @@
 
     <div class="navbar">
         <header>
-            <img id="fqlogo" src="images/fqlogo.png" alt="fqlogo">
+            <img id="fqlogo" src="{{ url_for('static', filename='images/fqlogo.png') }}" alt="fqlogo">
         </header>
-        <a href="main.html">Play</a>
-        <a href="tutorial.html">Tutorial</a>
-        <a href="about.html">About</a>
+        <a href="{{ url_for('main') }}">Play</a>
+        <a href="{{ url_for('tutorial') }}">Tutorial</a>
+        <a href="{{ url_for('about') }}">About</a>
     </div>
 
-    <div class ="aboutbase">
+    <div class="aboutbase">
         <main>
-
-        </div>
+    
         </main>
     </div>
-
     <footer>FlightQuiz &copy; 2024</footer>
 </body>
-
 </html>
