@@ -1,4 +1,4 @@
-// import './fetchFuncs'
+import * as fetch from 'fetchFuncs';
 
 
 
