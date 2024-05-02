@@ -19,7 +19,8 @@ let score = 0;
 let distance = 0;
 let used_time = 0;
 let co2_used = 0;
-let current_airport = fetch.random_fly();
+let airportData = fetch.random_fly();
+let current_airport = airportData["airport name"]
 let buttonClicked = false;
 
 document.getElementById('quit_button').addEventListener('click', function(event) {
@@ -36,8 +37,12 @@ while (!buttonClicked) {
     const airplane_model = func.planeModel();
 
     document.getElementById('start_game_button').addEventListener('click', function(event) {
-        let current_airport = fetch.random_fly();
-        fetch.traveling_co2(current_airport, airplane_model)
+        airportData = fetch.random_fly();
+        current_airport = airportData["airport name"]
+        let travelData = fetch.traveling_co2(current_airport, airplane_model)
+        distance = distance + travelData.distance
+        co2_used = co2_used + travelData.co2
+        used_time = distance + travelData.flight_time
         let questioner = func.quiz();
         let userAnswer = prompt(questioner.question + '\n' + questioner.answers);
         if (userAnswer === questioner.correct_answer) {
