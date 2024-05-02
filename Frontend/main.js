@@ -20,7 +20,6 @@ let distance = 0;
 let used_time = 0;
 let co2_used = 0;
 let current_airport = fetch.random_fly();
-let game_going = True;
 let airplane_model = '';
 let buttonClicked = false;
 
