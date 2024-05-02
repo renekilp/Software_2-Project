@@ -23,14 +23,14 @@ let airportData = fetch.random_fly();
 let current_airport = airportData['airport name'];
 let current_latitude = airportData['latitude'];
 let current_longitude = airportData['longitude'];
-let buttonClicked = false;
+let QuitbuttonClicked = false;
 
 document.getElementById('quit_button').
     addEventListener('click', function(event) {
-      buttonClicked = true;
+      QuitbuttonClicked = true;
     });
 
-while (!buttonClicked) {
+while (!QuitbuttonClicked) {
   const selection1 = confirm(
       'Do you want info of our plane models before choosing?');
   if (selection1 === true) {
