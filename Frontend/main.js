@@ -22,7 +22,6 @@ let co2_used = 0;
 let current_airport = gamesql.random_fly();
 let game_going = True;
 let airplane_model = '';
-airplane_model = '';
 let buttonClicked = false;
 
 document.getElementById('quit_button').addEventListener('click', function(event) {
