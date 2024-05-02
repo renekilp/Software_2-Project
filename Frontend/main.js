@@ -20,44 +20,55 @@ let distance = 0;
 let used_time = 0;
 let co2_used = 0;
 let airportData = fetch.random_fly();
-let current_airport = airportData["airport name"]
+let current_airport = airportData['airport name'];
+let current_latitude = airportData['latitude'];
+let current_longitude = airportData['longitude'];
 let buttonClicked = false;
 
-document.getElementById('quit_button').addEventListener('click', function(event) {
-    buttonClicked = true;
-});
+document.getElementById('quit_button').
+    addEventListener('click', function(event) {
+      buttonClicked = true;
+    });
 
 while (!buttonClicked) {
-    const selection1 = confirm('Do you want info of our plane models before choosing?');
-    if (selection1 === true) {
-        func.plane_info();
-    } else {
-        break;
-    }
-    const airplane_model = func.planeModel();
+  const selection1 = confirm(
+      'Do you want info of our plane models before choosing?');
+  if (selection1 === true) {
+    func.plane_info();
+  } else {
+    break;
+  }
+  const airplane_model = func.planeModel();
 
-    document.getElementById('start_game_button').addEventListener('click', function(event) {
+  document.getElementById('start_game_button').
+      addEventListener('click', function(event) {
         airportData = fetch.random_fly();
-        current_airport = airportData["airport name"]
-        let travelData = fetch.traveling_co2(current_airport, airplane_model)
-        distance = distance + travelData.distance
-        co2_used = co2_used + travelData.co2
-        used_time = distance + travelData.flight_time
+        current_airport = airportData['airport name'];
+        current_airport = airportData['airport name'];
+        current_latitude = airportData['latitude'];
+        current_longitude = airportData['longitude'];
+        let travelData = fetch.traveling_co2(current_airport, airplane_model);
+        distance = distance + travelData.distance;
+        co2_used = co2_used + travelData.co2;
+        used_time = distance + travelData.flight_time;
         let questioner = func.quiz();
-        let userAnswer = prompt(questioner.question + '\n' + questioner.answers);
+        let userAnswer = prompt(
+            questioner.question + '\n' + questioner.answers);
         if (userAnswer === questioner.correct_answer) {
-            score += 1;
-            alert('Correct!')
+          score += 1;
+          alert('Correct!');
         } else {
-            alert('Incorrect!')
+          alert('Incorrect!');
         }
-    });
-    document.getElementById('save_score').addEventListener('click', function(event){
-        let name = prompt('What is your username?')
-        fetch.add_score(name,score)
-    });
-    document.getElementById('top_players').addEventListener('click', function(event){
+      });
+  document.getElementById('save_score').
+      addEventListener('click', function(event) {
+        let name = prompt('What is your username?');
+        fetch.add_score(name, score);
+      });
+  document.getElementById('top_players').
+      addEventListener('click', function(event) {
         let tPlayers = fetch.top_players();
-        alert(tPlayers)
-    });
+        alert(tPlayers);
+      });
 }
