@@ -42,16 +42,16 @@ function plane_info() {
 }
 
 function quiz() {
-    const questionObject = func.question();
-    const { question, correct_answer, wrong_answer1, wrong_answer2, wrong_answer3, wrong_answer4 } = questionObject;
-    const answers = [correct_answer, wrong_answer1, wrong_answer2, wrong_answer3, wrong_answer4];
+    const questions = func.question(); //hakee kysymys sanakirjan
+    const { question, correct_answer, wrong_answer1, wrong_answer2, wrong_answer3, wrong_answer4 } = questions; //järjestää sanakirjan järkevästi
+    const answers = [correct_answer, wrong_answer1, wrong_answer2, wrong_answer3, wrong_answer4]; //tekee listan sekoittamista varten
 
     // Fisher-Yates shuffle algorithm Kiitos chatGPT
     for (let i = answers.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [answers[i], answers[j]] = [answers[j], answers[i]];
     }
-
+  // console logeja debugaamista varten
     console.log("Question:", question);
     console.log("Shuffled Answers:");
     answers.forEach((answer, index) => {
