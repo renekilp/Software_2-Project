@@ -1,4 +1,4 @@
-import Backend.pysql as pysql
+import pysql
 from flask import Flask, jsonify
 from flask_cors import CORS
 #pip install flask-cors
