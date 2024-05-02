@@ -41,7 +41,28 @@ function plane_info() {
   alert(info)
 }
 
-function quiz(){
-  let question = func.question();
+function quiz() {
+    const questionObject = func.question();
+    const { question, correct_answer, wrong_answer1, wrong_answer2, wrong_answer3, wrong_answer4 } = questionObject;
+    const answers = [correct_answer, wrong_answer1, wrong_answer2, wrong_answer3, wrong_answer4];
 
+    // Fisher-Yates shuffle algorithm Kiitos chatGPT
+    for (let i = answers.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [answers[i], answers[j]] = [answers[j], answers[i]];
+    }
+
+    console.log("Question:", question);
+    console.log("Shuffled Answers:");
+    answers.forEach((answer, index) => {
+        console.log(`${index + 1}. ${answer}`);
+    });
+
+    return {
+        question: question,
+        answers: answers
+    };
 }
+
+const quizData = quiz();
+console.log(quizData);
