@@ -22,7 +22,7 @@ let co2_used = 0;
 let current_airport = gamesql.random_fly();
 let game_going = True;
 let airplane_model = '';
-airplane_model = ''
+airplane_model = '';
 let buttonClicked = false;
 
 document.getElementById('quit_button').
@@ -39,7 +39,19 @@ while (!buttonClicked) {
   } else {
     break;
   }
-  airplane_model = func.planeModel()
+  airplane_model = func.planeModel();
+  document.getElementById('start_game_button').
+      addEventListener('click', function(event) {
+        let questionData = func.quiz();
+        let userAnswer = prompt(
+            questionData.question + '\n' + questionData.answers);
+        if (userAnswer === questionData.correct_answer) {
+          score += 1;
+        } else {
+          break;
+        }
+      });
 
+}
 }
 
