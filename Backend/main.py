@@ -27,7 +27,16 @@ def about():
 @app.route('/large_airports')
 def large_airports():
     result = pysql.search_large_airports()
-    return jsonify(result)
+    airportslist = []
+    for airport in result:
+        airportsk = {
+            "airport name": airport[0],
+            "latitude": airport[1],
+            "longitude": airport[2]
+        }
+
+        airportslist.append(airportsk)
+    return jsonify(airportslist)
 
 @app.route('/random_question')
 def random_question():

@@ -191,18 +191,17 @@ async function runGame() {
     .openPopup();
 
   // ISOJEN KENTTIEN PINNIEN TEKEMINEN - Ei iha wörki
-`  const largeAirports = await airports();
+  const largeAirports = await airports();
 
   for (let airport of largeAirports) {
     let largeAirportName = airport['airport name'];
-    let largeAirportLatitude = airport.latitude;
-    let largeAirportLongitude = airport.longitude;
-
+    let largeAirportLatitude = airport["latitude"];
+    let largeAirportLongitude = airport["longitude"];
     L.marker([largeAirportLatitude, largeAirportLongitude])
       .addTo(map)
       .bindPopup(largeAirportName)
       .openPopup();
-  }`
+  }
   // __________________________________________
 
   document
@@ -260,13 +259,4 @@ async function runGame() {
   }
 }
 
-let popup =document.getElementById("helppop");
-
-function openPopup(){
-  popup.classList.add("open-helppop");
-}
-
-function closePopup(){
-  popup.classList.remove("open-helppop");
-}
 runGame();
