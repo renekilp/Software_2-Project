@@ -61,7 +61,7 @@ body {
 .fqtitle{
     display: block;
     margin: auto;
-    padding-top: 4rem;
+    padding-top: 1rem;
 }
 /*  ---------------------------
    |                          |
@@ -72,6 +72,8 @@ body {
 .helpbutton{
     float: right;
     margin-right: 12rem;
+    background: none;
+    border:none;
     cursor: pointer;
 }
 
@@ -105,6 +107,12 @@ body {
 .helppop h2{
     font-size: 30px;
     text-align: left;
+}
+
+.onnipop {
+    float: right;
+    margin-top: 1rem;
+    margin-bottom: 5rem;
 }
 
 .open-helppop{
