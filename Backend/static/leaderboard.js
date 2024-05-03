@@ -4,7 +4,7 @@ async function topPlayers() {
     const data = await response.json();
     console.log(data);
 
-    const mainElement = document.querySelector("main");
+    const divId = document.querySelector("#bestPlayers");
 
     const ol = document.createElement("ol");
 
@@ -13,7 +13,7 @@ async function topPlayers() {
       li.textContent = player;
       ol.appendChild(li);
     }
-    mainElement.appendChild(ol);
+    divId.appendChild(ol);
   } catch (error) {
     console.error("Error fetching top players:", error);
     throw error;
