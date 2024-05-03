@@ -202,6 +202,7 @@ async function runGame() {
       .bindPopup(largeAirportName)
       .openPopup();
   }
+  map.setView([currentLatitude, currentLongitude], 12);
   // __________________________________________
 
   document
