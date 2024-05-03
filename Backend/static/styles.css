@@ -125,17 +125,10 @@ body {
     border-radius: 4px;
     cursor: pointer;
 }
-/*
-______________________
-|       main          |
-|                     |
-|                     |
-|                     |
-|_____________________|
-*/
 
 .mainbase {
-    display: block;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     margin: auto;
     background-color: var(--grape-kiss);
     border-width: 4px;
@@ -150,18 +143,6 @@ ______________________
     top: 2rem;
 }
 
-
-/*
-_________________________________________
-|                main                   |
-|     _______________ _______________   |
-|    |   maplayout   |  infobox     |   | 
-|    |    ______     |   _______    |   |   
-|    |   | map |     |  | info |    |   |
-|    |   |_____|     |  |______|    |   |
-|    |_______________|______________|   |              
-|_______________________________________|
-*/
 .maplayout {
     text-align: center;
     width: 100%;
