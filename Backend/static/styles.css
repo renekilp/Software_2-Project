@@ -160,16 +160,17 @@ body {
     top: 2rem;
 }
 .game {
-    display: grid;    
+    display: grid;   
 }
 .gameUpper h2 {
+    color: azure;
     text-align: center;
     margin: 0em;
     padding: 0em;
 }
-.gameUpperButtons {
+.gameUpperPlayerStats {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-row: 2;
     text-align: center;
 }
