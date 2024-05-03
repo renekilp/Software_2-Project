@@ -1,13 +1,14 @@
-
 async function airports() {
-  try { //kokeilee hakea tietoa
+  try {
+    //kokeilee hakea tietoa
     const response = await fetch('http://127.0.0.1:3000/large_airports');
     const data = await response.json();
-    console.log(data);
-    return data;//palauttaa fetchillä haetut tiedot
-  } catch (error) { // keskeyttää jos tapahtuu error
+    // console.log(data);
+    return data; //palauttaa fetchillä haetut tiedot
+  } catch (error) {
+    // keskeyttää jos tapahtuu error
     console.error('Error fetching airports:', error);
-    throw error;//lopettaa promisen errorin takia
+    throw error; //lopettaa promisen errorin takia
   }
 }
 
@@ -61,7 +62,6 @@ async function travelingCo2(userAirport, airplaneModel) {
   }
 }
 
-
 async function topPlayers() {
   try {
     const response = await fetch('http://127.0.0.1:3000/top_players');
@@ -74,7 +74,6 @@ async function topPlayers() {
   }
 }
 // ___________________________________________________________________________________________
-
 
 function planeModel() {
   while (true) {
@@ -102,50 +101,63 @@ function planeModel() {
 }
 
 function planeInfo() {
-  const info = 'Boeing 737:\n' +
-      'The Boeing 737 is a popular narrow-body aircraft produced by Boeing Commercial Airplanes.\n' +
-      'It is commonly used for short to medium-haul flights and is one of the best-selling commercial jetliners in history.\n' +
-      'The Boeing 737 has several variants, each with different seating capacities and range capabilities.\n' +
-      'Airbus A320:\n' +
-      'The Airbus A320 is a narrow-body airliner developed by Airbus.\n' +
-      'It is widely used by airlines around the world for short to medium-haul flights.\n' +
-      'Like the Boeing 737, the Airbus A320 has several variants, including the A318, A319, A320, and A321, each with varying seating capacities and range capabilities.\n' +
-      'Saab JA37 Viggen:\n' +
-      'The Saab JA37 Viggen is not a commercial airliner like the Boeing 737 and Airbus A320. Instead, it is a Swedish single-seat, single-engine, short-medium range combat aircraft.\n' +
-      'The Viggen was developed by Saab in the 1960s to replace the aging Saab 35 Draken as the Swedish Air Force\'s primary fighter aircraft.\n' +
-      'It features advanced avionics and was designed to perform a variety of roles, including air defense, ground attack, and reconnaissance.';
-  console.log(info)
-  alert(info)
+  const info =
+    'Boeing 737:\n' +
+    'The Boeing 737 is a popular narrow-body aircraft produced by Boeing Commercial Airplanes.\n' +
+    'It is commonly used for short to medium-haul flights and is one of the best-selling commercial jetliners in history.\n' +
+    'The Boeing 737 has several variants, each with different seating capacities and range capabilities.\n' +
+    'Airbus A320:\n' +
+    'The Airbus A320 is a narrow-body airliner developed by Airbus.\n' +
+    'It is widely used by airlines around the world for short to medium-haul flights.\n' +
+    'Like the Boeing 737, the Airbus A320 has several variants, including the A318, A319, A320, and A321, each with varying seating capacities and range capabilities.\n' +
+    'Saab JA37 Viggen:\n' +
+    'The Saab JA37 Viggen is not a commercial airliner like the Boeing 737 and Airbus A320. Instead, it is a Swedish single-seat, single-engine, short-medium range combat aircraft.\n' +
+    "The Viggen was developed by Saab in the 1960s to replace the aging Saab 35 Draken as the Swedish Air Force's primary fighter aircraft.\n" +
+    'It features advanced avionics and was designed to perform a variety of roles, including air defense, ground attack, and reconnaissance.';
+  console.log(info);
+  alert(info);
 }
 
 function quiz() {
-    const questionsData = questions(); //hakee kysymys sanakirjan
-    const { question, correct_answer, wrong_answer1, wrong_answer2, wrong_answer3, wrong_answer4 } = questionsData; //järjestää sanakirjan järkevästi
-    const answers = [correct_answer, wrong_answer1, wrong_answer2, wrong_answer3, wrong_answer4]; //tekee listan sekoittamista varten
+  const questionsData = questions(); //hakee kysymys sanakirjan
+  const {
+    question,
+    correct_answer,
+    wrong_answer1,
+    wrong_answer2,
+    wrong_answer3,
+    wrong_answer4,
+  } = questionsData; //järjestää sanakirjan järkevästi
+  const answers = [
+    correct_answer,
+    wrong_answer1,
+    wrong_answer2,
+    wrong_answer3,
+    wrong_answer4,
+  ]; //tekee listan sekoittamista varten
 
-    // Fisher-Yates shuffle algorithm Kiitos chatGPT
-    for (let i = answers.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [answers[i], answers[j]] = [answers[j], answers[i]];
-    }
+  // Fisher-Yates shuffle algorithm Kiitos chatGPT
+  for (let i = answers.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [answers[i], answers[j]] = [answers[j], answers[i]];
+  }
   // console logeja debugaamista varten
-    console.log("Question:", question);
-    console.log("Shuffled Answers:");
-    answers.forEach((answer, index) => {
-        console.log(`${index + 1}. ${answer}`);
-    });
+  console.log('Question:', question);
+  console.log('Shuffled Answers:');
+  answers.forEach((answer, index) => {
+    console.log(`${index + 1}. ${answer}`);
+  });
 
-    return {
-        question: question,
-        answers: answers
-    };
+  return {
+    question: question,
+    answers: answers,
+  };
 }
 
 // const quizData = quiz();
 // console.log(quizData);
 
 // ___________________________________________________________________________________________
-
 
 // pelin pyöritys
 async function runGame() {
@@ -157,40 +169,62 @@ async function runGame() {
   let currentAirport = airportData['airport name'];
   let currentLatitude = airportData.latitude;
   let currentLongitude = airportData.longitude;
+
+  ` DEBUG
+  console.log(currentAirport)
+  console.log(currentLatitude)
+  console.log(currentLongitude)
+  `;
   let quitButtonClicked = false;
 
-  // ALOITUS LENTOKENTÄN KARTTA-PIN
+  // ALOITUS LENTOKENTÄN KARTTA-PIN näkymä
   const map = L.map('map').setView([currentLatitude, currentLongitude], 12);
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    attribution:
+      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
   }).addTo(map);
 
-  L.marker([currentLatitude, currentLongitude]).
-      addTo(map).
-      bindPopup(`Starting Airport - ${currentAirport}`).
-      openPopup();
+  // ALOITUS KENTÄN PINNI KARTTAAN
+  L.marker([currentLatitude, currentLongitude])
+    .addTo(map)
+    .bindPopup(`Starting Airport - ${currentAirport}`)
+    .openPopup();
 
-  console.log(currentLatitude);
-  console.log(currentLongitude);
+  // ISOJEN KENTTIEN PINNIEN TEKEMINEN - Ei iha wörki
+`  const largeAirports = await airports();
+
+  for (let airport of largeAirports) {
+    let largeAirportName = airport['airport name'];
+    let largeAirportLatitude = airport.latitude;
+    let largeAirportLongitude = airport.longitude;
+
+    L.marker([largeAirportLatitude, largeAirportLongitude])
+      .addTo(map)
+      .bindPopup(largeAirportName)
+      .openPopup();
+  }`
   // __________________________________________
 
-  document.getElementById('quit_button').
-    addEventListener('click', function(event) {
+  document
+    .getElementById('quit_button')
+    .addEventListener('click', function (event) {
       quitButtonClicked = true;
     });
 
-while (!quitButtonClicked) {
-  const selection1 = confirm(
-      'Do you want info of our plane models before choosing?');
-  if (selection1 === true) {
-    planeInfo();
-  } else {
-    break;
-  }
-  const airplaneModel = planeModel();
+  while (!quitButtonClicked) {
+    const selection1 = confirm(
+      'Do you want info of our plane models before choosing?'
+    );
+    if (selection1 === true) {
+      planeInfo();
+    } else {
+      break;
+    }
+    const airplaneModel = planeModel();
 
-  document.getElementById('start_game_button').
-      addEventListener('click', function(event) {
+    document
+      .getElementById('start_game_button')
+      .addEventListener('click', function (event) {
         airportData = randomFly();
         currentAirport = airportData['airport name'];
         currentAirport = airportData['airport name'];
@@ -202,7 +236,8 @@ while (!quitButtonClicked) {
         usedTime = distance + travelData.flight_time;
         let questioner = quiz();
         let userAnswer = prompt(
-            questioner.question + '\n' + questioner.answers);
+          questioner.question + '\n' + questioner.answers
+        );
         if (userAnswer === questioner.correct_answer) {
           score += 1;
           alert('Correct!');
@@ -210,16 +245,19 @@ while (!quitButtonClicked) {
           alert('Incorrect!');
         }
       });
-  document.getElementById('save_score').
-      addEventListener('click', function(event) {
+    document
+      .getElementById('save_score')
+      .addEventListener('click', function (event) {
         let name = prompt('What is your username?');
         addScore(name, score);
       });
-  document.getElementById('top_players').
-      addEventListener('click', function(event) {
+    document
+      .getElementById('top_players')
+      .addEventListener('click', function (event) {
         let tPlayers = topPlayers();
         alert(tPlayers);
       });
-}}
+  }
+}
 
 runGame();
