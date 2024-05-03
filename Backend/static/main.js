@@ -157,12 +157,6 @@ async function runGame() {
   let currentAirport = airportData['airport name'];
   let currentLatitude = airportData.latitude;
   let currentLongitude = airportData.longitude;
-  
-  ` DEBUG
-  console.log(currentAirport)
-  console.log(currentLatitude)
-  console.log(currentLongitude)
-  `
   let quitButtonClicked = false;
 
   // ALOITUS LENTOKENTÄN KARTTA-PIN
