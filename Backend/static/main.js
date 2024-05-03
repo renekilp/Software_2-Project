@@ -1,8 +1,3 @@
-// import * as fetch from '../templates/fetchFuncs';
-// import * as func from '../templates/functionalities';
-
-const longitude = 0;
-const latitude = 0;
 
 async function airports() {
   try { //kokeilee hakea tietoa
@@ -153,31 +148,36 @@ function quiz() {
 
 
 // pelin pyöritys
-let score = 0;
-let distance = 0;
-let usedTime = 0;
-let co2Used = 0;
-let airportData = randomFly();
-let currentAirport = airportData['airport name'];
-let currentLatitude = airportData['latitude'];
-console.log(currentLatitude)
-let currentLongitude = airportData['longitude'];
-let quitButtonClicked = false;
+async function runGame() {
+  let score = 0;
+  let distance = 0;
+  let usedTime = 0;
+  let co2Used = 0;
+  let airportData = await randomFly();
+  let currentAirport = airportData.name;
+  let currentLatitude = airportData.latitude;
+  let currentLongitude = airportData.longitude;
+  console.log(currentAirport)
+  console.log(currentLatitude)
+  console.log(currentLongitude)
 
-// LEAFLET MÄPPI KOODI
-const map = L.map('map').setView([60.16952, 24.93545], 13);
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-}).addTo(map);
+  let quitButtonClicked = false;
 
-L.marker([60.16952, 24.93545]).
-    addTo(map).
-    bindPopup('Starting Point').
-    openPopup();
+  // LEAFLET MÄPPI KOODI
+  const map = L.map('map').setView([currentLatitude, currentLongitude], 13);
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  }).addTo(map);
 
+  L.marker([currentLatitude, currentLongitude]).
+      addTo(map).
+      bindPopup('Starting Airport').
+      openPopup();
 
+  console.log(currentLatitude);
+  console.log(currentLongitude);
 
-document.getElementById('quit_button').
+  document.getElementById('quit_button').
     addEventListener('click', function(event) {
       quitButtonClicked = true;
     });
@@ -223,4 +223,7 @@ while (!quitButtonClicked) {
         let tPlayers = topPlayers();
         alert(tPlayers);
       });
-}
+}}
+
+runGame();
+
