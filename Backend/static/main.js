@@ -197,7 +197,6 @@ async function runGame() {
     let largeAirportName = airport['airport name'];
     let largeAirportLatitude = airport["latitude"];
     let largeAirportLongitude = airport["longitude"];
-    console.log(airport)
     L.marker([largeAirportLatitude, largeAirportLongitude])
       .addTo(map)
       .bindPopup(largeAirportName)
