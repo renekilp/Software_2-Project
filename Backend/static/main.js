@@ -272,4 +272,16 @@ function closePopup(){
   popup.classList.remove("open-helppop");
 }
 
-runGame();
+
+// PELIN START NAPPI
+const gameStartWindow = document.getElementById("startButton");
+const gameStartButton = document.getElementById("startGame");
+
+window.onload = function() {
+  gameStartWindow.style.display = "block";
+}
+gameStartButton.onclick = function() {
+  gameStartWindow.style.display = "none";
+
+  runGame(); //AJETAAN PELI
+}
