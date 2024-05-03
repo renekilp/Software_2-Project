@@ -30,7 +30,7 @@ def large_airports():
     airportslist = []
     for airport in result:
         airportsk = {
-            "name": airport[0],
+            "airport name": airport[0],
             "latitude": airport[1],
             "longitude": airport[2]
         }
