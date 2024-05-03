@@ -120,21 +120,21 @@ ______________________
 |_____________________|
 */
 
-main {
-    display: grid;
-    width: 100%;
-    height: 40em;
-    grid-template-areas:
-        'boxi boxi';
-    grid-template-rows: auto;
-
-
+.mainbase {
+    display: block;
+    margin: auto;
     background-color: var(--grape-kiss);
-    border-width: 1px;
+    border-width: 4px;
     border-style: solid;
     border-color: var(--bundaberg-sand);
+    width: 80%;
+    height: 40em;
+    overflow: auto;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    position: relative;
+    top: 2rem;
 }
-
 
 
 /*
@@ -159,10 +159,6 @@ _________________________________________
     height: 100%;
     margin: 0em;
     padding: 0em;
-}
-
-.infobox {
-    text-align: center;
 }
 
 
