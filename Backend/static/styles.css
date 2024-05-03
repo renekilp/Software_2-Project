@@ -77,21 +77,22 @@ body {
     cursor: pointer;
 }
 
-.helppop{
+.helppop {
     width: 50rem;
     background: white;
     border-color: black;
     border-style: solid;
     border-radius: 1px;
     position: absolute;
-    top: 0%;
-    left: 75%;
-    transform: translate(-50%, -50%) scale(0.1);
+    top: 75%; /*korkeus*/
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
     padding: 0 30px 30px;
     color: #333;
     visibility: hidden;
     transition: transform 0.4s, top 0.4s;
+    z-index: 1000; /*TÄÄ TUO SEN TON MÄPIN PÄÄLLE*/
 }
 
 .helppop h1{
@@ -117,7 +118,7 @@ body {
 
 .open-helppop{
     visibility: visible;
-    top: 50%;
+    top: 75%; /*korkeus*/
     transform: translate(-50%, -50%) scale(1);
 }
 
