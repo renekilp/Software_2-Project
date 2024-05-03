@@ -9,8 +9,6 @@ async function airports() {
     const response = await fetch('http://127.0.0.1:3000/large_airports');
     const data = await response.json();
     console.log(data);
-    longitude = data.longitude;
-    latitude = data.latitude;
     return data;//palauttaa fetchillä haetut tiedot
   } catch (error) { // keskeyttää jos tapahtuu error
     console.error('Error fetching airports:', error);
@@ -162,6 +160,7 @@ let co2Used = 0;
 let airportData = randomFly();
 let currentAirport = airportData['airport name'];
 let currentLatitude = airportData['latitude'];
+console.log(currentLatitude)
 let currentLongitude = airportData['longitude'];
 let quitButtonClicked = false;
 
