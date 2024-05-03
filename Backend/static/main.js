@@ -191,18 +191,18 @@ async function runGame() {
     .openPopup();
 
   // ISOJEN KENTTIEN PINNIEN TEKEMINEN - Ei iha wörki
-`  const largeAirports = await airports();
+  const largeAirports = await airports();
 
   for (let airport of largeAirports) {
     let largeAirportName = airport['airport name'];
-    let largeAirportLatitude = airport.latitude;
-    let largeAirportLongitude = airport.longitude;
-
+    let largeAirportLatitude = airport["latitude"];
+    let largeAirportLongitude = airport["longitude"];
+    console.log(airport)
     L.marker([largeAirportLatitude, largeAirportLongitude])
       .addTo(map)
       .bindPopup(largeAirportName)
       .openPopup();
-  }`
+  }
   // __________________________________________
 
   document
