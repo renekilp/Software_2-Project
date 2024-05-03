@@ -175,6 +175,8 @@ L.marker([60.16952, 24.93545]).
     bindPopup('Starting Point').
     openPopup();
 
+
+
 document.getElementById('quit_button').
     addEventListener('click', function(event) {
       quitButtonClicked = true;
