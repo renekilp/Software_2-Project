@@ -5,26 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"/>
-    <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="../static/styles.css">
     <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" defer></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.esm.js" defer></script>
     <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.js" defer></script>
-    <script src="{{ url_for('static', filename='main.js') }}" defer></script>
+    <script src="../static/main.js" defer></script>
     <title>FlightQuiz</title>
-    <link rel="icon" href="{{ url_for('static', filename='images/fqlogo.png') }}" type="image/png">
+    <link rel="icon" href="../static/images/fqlogo.png" type="image/png">
 </head>
 <body>
     <div class="navbar">
         <header>
-            <img id="fqlogo" src="{{ url_for('static', filename='images/fqlogo.png') }}" alt="fqlogo">
+            <img id="fqlogo" src="../static/images/fqlogo.png" alt="fqlogo">
         </header>
-        <a href="{{ url_for('main') }}">Play</a>
-        <a href="{{ url_for('tutorial') }}">Tutorial</a>
-        <a href="{{ url_for('about') }}">About</a>
+        <a href="main.html">Play</a>
+        <a href="leaderboards.html">Leaderboards</a>
+        <a href="about.html">About</a>
     </div>
 
     <div class="titleimage">
-        <img class="fqtitle" src="{{ url_for('static', filename='images/flightquiztitle.png') }}" alt="title image">
+        <img class="fqtitle" src="../static/images/flightquiztitle.png" alt="title image">
+    </div>
+
+    <div class="helpbuttonelement">
+        <button type="submit" class="helpbutton" onclick="openPopup()">
+            <img src="../static/images/phbutton.png" alt="helpbutton">
+        </button>
+
+            <div class="helppop" id="helppop">
+                <h1>Tutorial</h1>
+                <p>This is a placeholder for a short tutorial!</p>
+                <button type="button" onclick="closePopup()">OK</button>
+            </div>
+
     </div>
 
     <main>
@@ -35,5 +48,6 @@
     </main>
 
     <footer>FlightQuiz &copy; 2024</footer>
+
 </body>
 </html>
