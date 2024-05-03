@@ -41,7 +41,7 @@ async function randomFly() {
   try {
     const response = await fetch('http://127.0.0.1:3000/random_flight');
     const data = await response.json();
-    console.log(data);
+    // console.log(data);
     return data;
   } catch (error) {
     console.error('Error fetching random question:', error);
