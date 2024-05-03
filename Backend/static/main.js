@@ -154,16 +154,18 @@ async function runGame() {
   let usedTime = 0;
   let co2Used = 0;
   let airportData = await randomFly();
-  let currentAirport = airportData.name;
+  let currentAirport = airportData['airport name'];
   let currentLatitude = airportData.latitude;
   let currentLongitude = airportData.longitude;
+  
+  ` DEBUG
   console.log(currentAirport)
   console.log(currentLatitude)
   console.log(currentLongitude)
-
+  `
   let quitButtonClicked = false;
 
-  // LEAFLET MÄPPI KOODI
+  // ALOITUS LENTOKENTÄN KARTTA-PIN
   const map = L.map('map').setView([currentLatitude, currentLongitude], 13);
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
@@ -171,11 +173,12 @@ async function runGame() {
 
   L.marker([currentLatitude, currentLongitude]).
       addTo(map).
-      bindPopup('Starting Airport').
+      bindPopup(`Starting Airport - ${currentAirport}`).
       openPopup();
 
   console.log(currentLatitude);
   console.log(currentLongitude);
+  // __________________________________________
 
   document.getElementById('quit_button').
     addEventListener('click', function(event) {
