@@ -277,11 +277,19 @@ function closePopup(){
 const gameStartWindow = document.getElementById("startButton");
 const gameStartButton = document.getElementById("startGame");
 
-window.onload = function() {
+window.onload = function() { //start nappulan ikkuna
   gameStartWindow.style.display = "block";
 }
-gameStartButton.onclick = function() {
-  gameStartWindow.style.display = "none";
+
+gameStartButton.onclick = function() { // starttinappulan jälkeen display none
+  gameStartWindow.style.display = "none"; 
+  
+  // sit kysytään nimi, tsekataan että se ei ole tyhjä, ja että jotain on syötetty
+  let name = prompt('What is your username?');
+  while (name == null || name.trim() === "") {
+    name = prompt('Please enter a valid username:');
+  }
+  console.log("Welcome, " + name + "!");
 
   runGame(); //AJETAAN PELI
 }
