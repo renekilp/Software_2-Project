@@ -64,7 +64,53 @@ body {
     padding-top: 4rem;
 }
 
+.helpbutton{
+    float: right;
+    margin-right: 12rem;
+    cursor: pointer;
+}
 
+.helppop{
+    width: 75rem;
+    background: white;
+    border-color: black;
+    border-style: solid;
+    border-radius: 1px;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    text-align: center;
+    padding: 0 30px 30px;
+    color: #333;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+}
+
+.open-helppop{
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.helppop h1{
+    font-size: 38px;
+    font-weight: 500;
+    margin: 30px 0 10px;
+}
+
+.helppop button{
+    width: 100%;
+    margin-top: 50px;
+    padding: 10px 0;
+    background: #CA4E79;
+    color: black;
+    border: 0;
+    outline: none;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+}
 /*
 ______________________
 |       main          |

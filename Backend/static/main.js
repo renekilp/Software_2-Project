@@ -260,4 +260,13 @@ async function runGame() {
   }
 }
 
+let popup =document.getElementById("helppop");
+
+function openPopup(){
+  popup.classList.add("open-helppop");
+}
+
+function closePopup(){
+  popup.classList.remove("open-helppop");
+}
 runGame();
