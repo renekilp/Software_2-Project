@@ -259,6 +259,8 @@ async function runGame() {
   }
 }
 
+// ----- Tutorial popup soosit --------
+
 let popup =document.getElementById("helppop");
 
 function openPopup(){
