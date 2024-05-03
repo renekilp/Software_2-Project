@@ -33,9 +33,9 @@
             <div id="map"></div>
         </div>
         <div class="game">
-            <div class="gameUpper">
+            <div class="gameSection1">
                 <h2>Player Stats</h2>
-                <div class="gameUpperPlayerStats">
+                <div class="playerStats">
                     <h3>Points</h3>
                     <h3>Distance</h3>
                     <h3>Time</h3>
@@ -45,26 +45,30 @@
                     <p>[h]</p>
                     <p>[kg]</p>
                 </div>
-            <div class="gameUpperPlayerInfo"></div>
+                <h2>Player Info</h2>
+                <div class="playerInfo">
+                    <h3>Name</h3>
+                    <h3>Model</h3>
+                </div>
             </div>
-            <div class="gameLower">
+            <div class="gameSection2">
+                <div class="gameUpperPlayerInfo"></div>
                 
             </div>
         </div>
         </div>
 
-    <footer>FlightQuiz &copy; 2024</footer>
-
-    <div class="helpbuttonelement">
-
-        <button type="submit" class="helpbutton" onclick="openPopup()">
-
-            <img src="../static/images/onnihelp.png" alt="helpbutton">
-
-        </button>
-
+        
+        <div class="helpbuttonelement">
+            
+            <button type="submit" class="helpbutton" onclick="openPopup()">
+                
+                <img src="../static/images/onnihelp.png" alt="helpbutton">
+                
+            </button>
+            
             <div class="helppop" id="helppop">
-
+                
                 <h1>Heya, Captain!</h1>
                 <p>I'm your trusty co-pilot A.I O.N.N.I (Omnipotent, Neat, Navigation, Instructor)!</p>
                 <p>Your main goal is to hop from airport to airport. You as a player is bombarded with offbeat trivia questions about each country you visit. Your journey will be filled with laughter and learning. But remember, with only one wrong answer, your plane will make an emergency landing ending your journey...</p>
@@ -73,8 +77,8 @@
                 <img class="onnipop" src="../static/images/onni.gif" alt="smiling_robot">
                 <h2>GOOD LUCK, CAPTAIN!</h2>
                 <button type="button" onclick="closePopup()">OK</button>
-
+                
             </div>
-
-</body>
+            <footer>FlightQuiz &copy; 2024</footer>
+        </body>
 </html>

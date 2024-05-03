@@ -136,6 +136,7 @@ body {
 
 /* START POPUP KUVAKE*/
 .startButton {
+    text-align: center;
     position: absolute;
     top: 0;
     left: 0;
@@ -144,11 +145,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.781);
 }
 #startGame {
     padding: 10px 20px;
     font-size: 20px;
+    position: relative;
+    top: 45%;
+    
 }
 
 .mainbase {
@@ -170,13 +174,20 @@ body {
 .game {
     display: grid;   
 }
-.gameUpper h2 {
+.gameSection1 h2 {
     color: azure;
     text-align: center;
     margin: 0em;
     padding: 0em;
 }
-.gameUpperPlayerStats {
+.playerStats {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-row: 2;
+    text-align: center;
+}
+
+.playerInfo {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-row: 2;
