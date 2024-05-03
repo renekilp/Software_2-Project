@@ -63,7 +63,12 @@ body {
     margin: auto;
     padding-top: 4rem;
 }
-
+/*  ---------------------------
+   |                          |
+   |       - POP UP -         |
+   |                          |
+   ----------------------------
+*/
 .helpbutton{
     float: right;
     margin-right: 12rem;
@@ -71,14 +76,14 @@ body {
 }
 
 .helppop{
-    width: 75rem;
+    width: 50rem;
     background: white;
     border-color: black;
     border-style: solid;
     border-radius: 1px;
     position: absolute;
     top: 0%;
-    left: 50%;
+    left: 75%;
     transform: translate(-50%, -50%) scale(0.1);
     text-align: center;
     padding: 0 30px 30px;
@@ -87,23 +92,32 @@ body {
     transition: transform 0.4s, top 0.4s;
 }
 
+.helppop h1{
+    font-size: 38px;
+    text-align: left;
+}
+
+.helppop p{
+    font-size: 22px;
+    text-align: left;
+}
+
+.helppop h2{
+    font-size: 30px;
+    text-align: left;
+}
+
 .open-helppop{
     visibility: visible;
     top: 50%;
     transform: translate(-50%, -50%) scale(1);
 }
 
-.helppop h1{
-    font-size: 38px;
-    font-weight: 500;
-    margin: 30px 0 10px;
-}
-
 .helppop button{
-    width: 100%;
+    width: 10%;
     margin-top: 50px;
     padding: 10px 0;
-    background: #CA4E79;
+    background: var(--middle-safflower);
     color: black;
     border: 0;
     outline: none;
@@ -175,7 +189,7 @@ footer {
     margin: 5em;
 
 }
-.tutbase{
+.leaderbase{
     display: block;
     margin: auto;
     background-color: var(--grape-kiss);
@@ -190,6 +204,12 @@ footer {
     top: 2rem;
 }
 
+.leadertitle h1 {
+    text-align: center;
+    font-size: 4rem;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+}
 /* ------------------------------------------
   |              -  about -                 |
   |                                         |

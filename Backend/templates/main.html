@@ -1,55 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
-    />
-    <link rel="stylesheet" href="../static/styles.css" />
-    <script
-      src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
-      defer
-    ></script>
-    <script
-      type="module"
-      src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.esm.js"
-      defer
-    ></script>
-    <script
-      nomodule
-      src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.js"
-      defer
-    ></script>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="../static/styles.css">
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" defer></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.esm.js" defer></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.js" defer></script>
     <script src="../static/main.js" defer></script>
     <title>FlightQuiz</title>
-    <link rel="icon" href="../static/images/fqlogo.png" type="image/png" />
-  </head>
-  <body>
+    <link rel="icon" href="../static/images/fqlogo.png" type="image/png">
+</head>
+<body>
     <div class="navbar">
-      <header>
-        <img id="fqlogo" src="../static/images/fqlogo.png" alt="fqlogo" />
-      </header>
-      <a href="main.html">Play</a>
-      <a href="leaderboards.html">Leaderboards</a>
-      <a href="about.html">About</a>
+        <header>
+            <img id="fqlogo" src="../static/images/fqlogo.png" alt="fqlogo">
+        </header>
+        <a href="main.html">Play</a>
+        <a href="leaderboards.html">Leaderboards</a>
+        <a href="about.html">About</a>
     </div>
-    <div class="mainbase">
-        
 
-      <div class="helpbuttonelement">
-        <button type="submit" class="helpbutton" onclick="openPopup()">
-          <img src="../static/images/phbutton.png" alt="helpbutton" />
-        </button>
-        <div class="helppop" id="helppop">
-          <h1>Tutorial</h1>
-          <p>This is a placeholder for a short tutorial!</p>
-          <button type="button" onclick="closePopup()">OK</button>
-        </div>
-      </div>
+    <div class="titleimage">
+        <img class="fqtitle" src="../static/images/flightquiztitle.png" alt="title image">
     </div>
+
+    <div class="helpbuttonelement">
+        <button type="submit" class="helpbutton" onclick="openPopup()">
+            <img src="../static/images/phbutton.png" alt="helpbutton">
+        </button>
+
+            <div class="helppop" id="helppop">
+                <h1>Heya, Captain!</h1>
+                <p>I'm your trusty co-pilot A.I O.N.N.I (Omnipotent, Neat, Navigation, Instructor)!</p>
+                <p>Your main goal is to hop from airport to airport. You as a player is bombarded with offbeat trivia questions about each country you visit. Your journey will be filled with laughter and learning. But remember, with only one wrong answer, your plane will make an emergency landing ending your journey...
+                </p>
+                <p>After the game ends, your will be scored based on the points, distance and co2 usage.
+    How far can you reach without making a mistake? Let's find out!</p>
+                <p>Feel free to click on me anytime if you'd like to read this text again!</p>
+                <h2>GOOD LUCK, CAPTAIN!</h2>
+                <button type="button" onclick="closePopup()">OK</button>
+            </div>
+
+    </div>
+
+    <main>
+        <div class="maplayout">
+            <div id="map"></div>
+        </div>
+        <div class="infobox">jou</div>
+    </main>
+
     <footer>FlightQuiz &copy; 2024</footer>
-  </body>
+
+</body>
 </html>
