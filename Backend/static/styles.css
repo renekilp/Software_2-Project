@@ -63,7 +63,12 @@ body {
     margin: auto;
     padding-top: 4rem;
 }
-
+/*  ---------------------------
+   |                          |
+   |       - POP UP -         |
+   |                          |
+   ----------------------------
+*/
 .helpbutton{
     float: right;
     margin-right: 12rem;
@@ -188,7 +193,7 @@ footer {
     margin: 5em;
 
 }
-.tutbase{
+.leaderbase{
     display: block;
     margin: auto;
     background-color: var(--grape-kiss);
@@ -203,6 +208,12 @@ footer {
     top: 2rem;
 }
 
+.leadertitle h1 {
+    text-align: center;
+    font-size: 4rem;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+}
 /* ------------------------------------------
   |              -  about -                 |
   |                                         |
