@@ -142,6 +142,20 @@ body {
     position: relative;
     top: 2rem;
 }
+.game {
+    display: grid;    
+}
+.gameUpper h2 {
+    text-align: center;
+    margin: 0em;
+    padding: 0em;
+}
+.gameUpperButtons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-row: 2;
+    text-align: center;
+}
 
 .maplayout {
     text-align: center;
