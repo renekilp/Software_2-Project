@@ -96,7 +96,7 @@ function planeModel() {
     }
   }
 
-  console.log("Selected airplane model:", airplaneModel);
+  // console.log("Selected airplane model:", airplaneModel);
   return airplaneModel;
 }
 
@@ -297,6 +297,7 @@ gameStartButton.onclick = function () {
   name = capitalize(name);
   console.log("Welcome, " + name + "!");
   document.querySelector("#playerName").textContent = name;
+  planeModel();
 
   runGame(); //Startin ja nimen jälkeen alotetaan peli
 };
