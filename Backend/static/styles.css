@@ -259,6 +259,37 @@ footer {
     padding-top: 2rem;
     padding-bottom: 3rem;
 }
+
+#bestPlayers {
+    text-align: center;
+}
+
+#bestPlayers ol {
+    font-size: 34px;
+    font-weight: bold;
+    display: inline-block;
+    color: transparent;
+    background-image: linear-gradient(to left, gold, var(--bundaberg-sand),palegoldenrod, lightgoldenrodyellow);
+    -webkit-background-clip: text;
+    animation: animate 5s linear infinite;
+    -webkit-background-size: 500%;
+    background-size: 500%;
+}
+
+@keyframes animate {
+    0%{
+        background-position: 0 100%;
+    }
+    50%{
+        background-position: 100% 0%;
+    }
+    0%{
+        background-position: 0 100%;
+    }
+
+}
+
+
 /* ------------------------------------------
   |              -  about -                 |
   |                                         |
