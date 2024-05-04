@@ -297,7 +297,6 @@ gameStartButton.onclick = function () {
   name = capitalize(name);
   console.log("Welcome, " + name + "!");
   document.querySelector("#playerName").textContent = name;
-  planeModel();
 
   runGame(); //Startin ja nimen jälkeen alotetaan peli
 };
