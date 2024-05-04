@@ -120,6 +120,7 @@ function planeInfo() {
 
 function quiz() {
   const questionsData = questions(); //hakee kysymys sanakirjan
+
   const {
     question,
     correct_answer,
@@ -176,7 +177,6 @@ async function runGame() {
   console.log(currentLongitude)
   `;
   let quitButtonClicked = false;
-
   // ALOITUS LENTOKENTÄN KARTTA-PIN näkymä
   const map = L.map("map").setView([currentLatitude, currentLongitude], 12);
   L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -189,7 +189,7 @@ async function runGame() {
     .addTo(map)
     .bindPopup(`Starting Airport - ${currentAirport}`)
     .openPopup();
-
+/*
   // ISOJEN KENTTIEN PINNIEN TEKEMINEN - Ei iha wörki
   const largeAirports = await airports();
 
@@ -211,6 +211,8 @@ async function runGame() {
       quitButtonClicked = true;
     });
 
+  */
+
   while (!quitButtonClicked) {
     const selection1 = confirm(
       "Do you want info of our plane models before choosing?"
@@ -220,13 +222,11 @@ async function runGame() {
     } else {
       break;
     }
-    const airplaneModel = planeModel();
 
     document
       .getElementById("start_game_button")
       .addEventListener("click", function (event) {
         airportData = randomFly();
-        currentAirport = airportData["airport name"];
         currentAirport = airportData["airport name"];
         currentLatitude = airportData["latitude"];
         currentLongitude = airportData["longitude"];
@@ -300,3 +300,27 @@ gameStartButton.onclick = function () {
 
   runGame(); //Startin ja nimen jälkeen alotetaan peli
 };
+
+//plane model selection
+buttons = [document.getElementById("model1"),document.getElementById("model2"),document.getElementById("model3")]
+buttons.forEach((button) => button.addEventListener("click", planeselection))
+function planeselection(evt) {
+  document.getElementById("modelChoice").style.display = "none"
+  const planediv = document.getElementById("planeModel")
+  const button = evt.target
+  if (button.value === "1") {
+    planediv.textContent =  "Boeing 737";
+  }
+  if (button.value === "2") {
+    planediv.textContent =  "Airbus A320";
+  }
+  if (button.value === "3") {
+    planediv.textContent = "Saab JA37 Viggen";
+
+    /* } else if (button.value === "Matti" || airplaneModel === "Peyman") {
+         airplaneModel = "Matti or Peyman";
+         break;*/
+  }
+}
+
+
