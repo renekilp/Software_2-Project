@@ -172,20 +172,27 @@ body {
     position: relative;
     top: 2rem;
 }
-.game {
-    display: grid;   
-}
 .gameSection1 h2 {
     color: azure;
     text-align: center;
     margin: 0em;
     padding: 0em;
 }
+
+.gameSection1 h3 {
+    color: rgb(207, 207, 207);
+}
 .playerStats {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-row: 2;
     text-align: center;
+    
+    
+    margin: 3px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--bundaberg-sand);
 }
 
 .playerInfo {
@@ -193,6 +200,15 @@ body {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-row: 2;
     text-align: center;
+
+    margin: 3px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--bundaberg-sand);
+}
+
+.gameSection2 {
+    display: block;
 }
 
 .maplayout {
