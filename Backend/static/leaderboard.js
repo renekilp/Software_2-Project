@@ -15,6 +15,7 @@ async function topPlayers() {
     }
     divId.appendChild(ol);
   } catch (error) {
+    alert("Error fetching top players! Can't connect to the server. :(");
     console.error("Error fetching top players:", error);
     throw error;
   }

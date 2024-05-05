@@ -7,6 +7,7 @@ async function airports() {
         return data; //palauttaa fetchillä haetut tiedot
     } catch (error) {
         // keskeyttää jos tapahtuu error
+        alert("Error fetching airports! Can't connect to the server! :(");
         console.error("Error fetching airports:", error);
         throw error; //lopettaa promisen errorin takia
     }
@@ -18,6 +19,7 @@ async function questions() {
         const data = await response.json();
         return data;
     } catch (error) {
+        alert("Error fetching random questions! Can't connect to the server! :(")
         console.error("Error fetching random question:", error);
         throw error;
     }
@@ -31,6 +33,7 @@ async function addScore(playerName, score) {
         console.log(data);
         return data;
     } catch (error) {
+        alert("Error adding score! Can't connect to the server! :(")
         console.error("Error adding score:", error);
         throw error;
     }
@@ -43,6 +46,7 @@ async function randomFly() {
         // console.log(data);
         return data;
     } catch (error) {
+        alert("Error fetching random question! Can't connect to the server! :(")
         console.error("Error fetching random question:", error);
         throw error;
     }
@@ -56,6 +60,7 @@ async function travelingCo2(userAirport, airplaneModel) {
         console.log(data);
         return data;
     } catch (error) {
+        alert("Error fetching CO2 data! Can't connect to the server! :(")
         console.error("Error fetching CO2 data:", error);
         throw error;
     }
@@ -68,6 +73,7 @@ async function topPlayers() {
         console.log(data);
         return data;
     } catch (error) {
+        alert("Error fetching random question! Can't connect to the server! :(")
         console.error("Error fetching random question:", error);
         throw error;
     }

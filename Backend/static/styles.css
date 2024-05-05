@@ -276,6 +276,8 @@ footer {
     background-size: 500%;
 }
 
+/* Animoi top pelaajien nimien värit */
+
 @keyframes animate {
     0%{
         background-position: 0 100%;
