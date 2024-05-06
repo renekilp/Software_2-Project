@@ -235,14 +235,18 @@ while(true){
         .openPopup();
 
 
-
-
-
     }
     else{
         document.getElementById("quiz").style.display = "none" //hides quiz when answer was incorrect
         document.getElementById("quitScreen").style.display = "block"
         endstats(distance,co2Used,usedTime,score)
+        document.getElementById("saveScore").addEventListener("click", function() {
+            addScore(document.getElementById("playerName").textContent,score)
+            window.location.reload()
+        })
+        document.getElementById("retryButton").addEventListener("click",function(){
+            window.location.reload()
+        })
         break
     }
 }
@@ -332,4 +336,3 @@ function endstats(distance,co2,time,score){
 
     document.getElementById("endpoints").textContent = score
 }
-
