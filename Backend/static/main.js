@@ -316,9 +316,9 @@ function planeselection(evt) {
 
 
 function statUpdate(distance,co2,time,current_airport,score){
-    document.getElementById("distance").textContent = distance.toFixed(2)
-    document.getElementById("co2").textContent = co2.toFixed(2)
-    document.getElementById("time").textContent = time.toFixed(2)
+    document.getElementById("distance").textContent = distance.toFixed(2) + " km"
+    document.getElementById("co2").textContent = co2.toFixed(2) + " kg"
+    document.getElementById("time").textContent = time.toFixed(2) + " h"
     document.getElementById("currentAirport").textContent = current_airport["airport_name"]
     document.getElementById("points").textContent = score
 }
