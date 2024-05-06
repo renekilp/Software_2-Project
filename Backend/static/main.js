@@ -242,6 +242,7 @@ while(true){
     else{
         document.getElementById("quiz").style.display = "none" //hides quiz when answer was incorrect
         document.getElementById("quitScreen").style.display = "block"
+        endstats(distance,co2Used,usedTime,score)
         break
     }
 }
@@ -323,3 +324,12 @@ function statUpdate(distance,co2,time,current_airport,score){
     document.getElementById("currentAirport").textContent = current_airport["airport_name"]
     document.getElementById("points").textContent = score
 }
+
+function endstats(distance,co2,time,score){
+    document.getElementById("enddistance").textContent = distance.toFixed(2) + " km"
+    document.getElementById("endco2").textContent = co2.toFixed(2) + " kg"
+    document.getElementById("endtime").textContent = time.toFixed(2) + " h"
+
+    document.getElementById("endpoints").textContent = score
+}
+
