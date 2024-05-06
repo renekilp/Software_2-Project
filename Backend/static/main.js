@@ -179,7 +179,7 @@ async function runGame() {
     let currentAirport = await randomFly();
     //let currentAirport = airportData["airport name"];
     const planeModel = document.getElementById("planeModel").textContent
-
+    document.getElementById("currentAirport").textContent = currentAirport["airport name"]
     // ALOITUS LENTOKENTÄN KARTTA-PIN näkymä
     const map = L.map("map").setView([currentAirport.latitude, currentAirport.longitude], 12);
     L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -217,19 +217,33 @@ async function runGame() {
       */
 
 while(true){
-   // console.log(await quiz())
-    if(await quiz()){
+
+    if(await quiz()){ // quiz return true if answered correctly
         score++
         let traveldata =  await travelingCo2(currentAirport,planeModel)
         distance = distance + traveldata["distance"]
         usedTime = usedTime + traveldata["flight_time"]
         co2Used = co2Used + traveldata["co2"]
         currentAirport = traveldata["next_airport"]
-        statUpdate(distance,co2Used,usedTime,currentAirport,score)
+        statUpdate(distance,co2Used,usedTime,currentAirport,score) //updates stats
+
+
+        //updates current location to map
+        L.marker([currentAirport.latitude, currentAirport.longitude])
+        .addTo(map)
+        .bindPopup(`current airport - ${currentAirport["airport_name"]}`)
+        .openPopup();
+
+
+
+
+
+    }
+    else{
+        document.getElementById("quiz").style.display = "none" //hides quiz when answer was incorrect
+        break
     }
 }
-
-
 
 
 }
