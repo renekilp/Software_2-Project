@@ -40,6 +40,7 @@ def large_airports():
 
 @app.route('/random_question')
 def random_question():
+
     question = pysql.get_random_question()
     response = {
         'question': question[0],
@@ -47,7 +48,7 @@ def random_question():
         'wrong_answer1': question[2],
         'wrong_answer2': question[3],
         'wrong_answer3': question[4],
-        'wrong_answer4': question[5],
+        'wrong_answer4': question[5]
     }
     return jsonify(response)
 
@@ -61,12 +62,13 @@ def random_flight():
     airport = pysql.random_fly()
     response = {"airport name": airport[0],
                 "latitude": airport[1],
-                "longitude": airport[2],}
+                "longitude": airport[2]}
     return jsonify(response)
 
-@app.route('/travel_co2/<user_airport>/<airplane_model>')
-def travel_co2_route(user_airport, airplane_model):
-    result = pysql.travel_co2(user_airport, airplane_model)
+@app.route('/travel_co2/<user_airport_latitude>/<user_airport_longitude>/<airplane_model>')
+def travel_co2_route(user_airport_latitude,user_airport_longitude, airplane_model):
+    result = pysql.travel_co2(user_airport_latitude,user_airport_longitude, airplane_model)
+    print(result)
     return jsonify(result)
 
 @app.route('/top_players')

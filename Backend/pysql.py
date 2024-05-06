@@ -52,27 +52,29 @@ def random_fly():  # lennättää pelaajan uudelle random lentokentälle
     return user_airport
 
 
-def travel_co2(user_airport, airplane_model):
+def travel_co2(user_airport_latitude,user_airport_longitude, airplane_model):
+    print(user_airport_latitude)
+    print(airplane_model)
     next_airport = random_fly()
     next_coordinates = [next_airport[1], next_airport[2]]
-    current_coordinates = [user_airport[1], user_airport[2]]
+    current_coordinates = [user_airport_latitude, user_airport_longitude]
     distance = geodesic(next_coordinates, current_coordinates).kilometers
     co2 = 0
     flight_time = 0
-    if airplane_model == 2:  # boeing 737
+    if airplane_model == "Boeing 737":  # boeing 737
         co2 = distance * 0.0625  # kg per kilometer
         flight_time = distance / 830  # km/h
-    elif airplane_model == 1:  # airbus a320
+    elif airplane_model == "Airbus A320":  # airbus a320
         co2 = distance * 0.061
         flight_time = distance / 845
-    elif airplane_model == 3:  # saab ja37 viggen
+    elif airplane_model == "Saab JA37 Viggen":  # saab ja37 viggen
         co2 = distance * 0.435
         flight_time = distance / 2231
     elif airplane_model == "Matti" or airplane_model == "Peyman":
         co2 = distance * 0.0045
         flight_time = distance / 6
 
-    results = [distance, co2, flight_time, next_airport]
+    results = {"distance":distance, "co2":co2, "flight_time":flight_time, "next_airport":{"airport_name":next_airport[0], "latitude":next_airport[1], "longitude":next_airport[2]}}
     return results
 
 
