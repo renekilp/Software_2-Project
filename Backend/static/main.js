@@ -16,8 +16,7 @@ async function airports() {
 async function questions() {
     try {
         const response = await fetch("http://127.0.0.1:3000/random_question");
-        const data = await response.json();
-        return data;
+         return await response.json();
     } catch (error) {
         alert("Error fetching random questions! Can't connect to the server! :(")
         console.error("Error fetching random question:", error);
@@ -41,10 +40,9 @@ async function addScore(playerName, score) {
 
 async function randomFly() {
     try {
-        const response = await fetch("http://127.0.0.1:3000/random_flight");
-        const data = await response.json();
+        const response = await fetch("http://127.0.0.1:3000/random_flight")
         // console.log(data);
-        return data;
+        return await response.json();
     } catch (error) {
         alert("Error fetching random question! Can't connect to the server! :(")
         console.error("Error fetching random question:", error);
@@ -54,7 +52,7 @@ async function randomFly() {
 
 async function travelingCo2(userAirport, airplaneModel) {
     try {
-        const url = `http://127.0.0.1:3000/travel_co2/${userAirport}/${airplaneModel}`;
+        const url = `http://127.0.0.1:3000/travel_co2/${userAirport.latitude}/${userAirport.longitude}/${airplaneModel}`;
         const response = await fetch(url);
         const data = await response.json();
         console.log(data);
@@ -103,7 +101,7 @@ function planeInfo() {
 async function quiz() {
     const questionsData = await questions(); //hakee kysymys sanakirjan
     const quizElement = document.getElementById("quiz");
-    console.log(questionsData)
+    //console.log(questionsData)
     const {
         question,
         correct_answer,
@@ -125,34 +123,51 @@ async function quiz() {
         const j = Math.floor(Math.random() * (i + 1));
         [answers[i], answers[j]] = [answers[j], answers[i]];
     }
-    // console logeja debugaamista varten
+    /* console logeja debugaamista varten
     console.log("Question:", question);
     console.log("Shuffled Answers:");
     answers.forEach((answer, index) => {
         console.log(`${index + 1}. ${answer}`);
-    });
+    });*/
 
     quizElement.innerHTML = `                    <h2 id="question">${question}</h2>
                     <form>
-                        <input name="answer" type="radio" value ="${answers[0]}">${answers[0]}</input>
-                        <input name="answer" type="radio" value ="${answers[1]}">${answers[1]}</input>
-                        <input name="answer" type="radio" value="${answers[2]}">${answers[2]}</input>
-                        <input name="answer" type="radio" value="${answers[3]}">${answers[3]}</input>
-                        <input name="answer" type="radio" value="${answers[4]}">${answers[4]}</input>
+                        <label>
+                            <input name="answer" type="radio" value ="${answers[0]}">${answers[0]}</input>
+                        </label>
+                        <label>
+                            <input name="answer" type="radio" value ="${answers[1]}">${answers[1]}</input>
+                        </label>
+                        <label>   
+                            <input name="answer" type="radio" value="${answers[2]}">${answers[2]}</input>
+                        </label>
+                        <label>
+                            <input name="answer" type="radio" value="${answers[3]}">${answers[3]}</input>
+                        </label>
+                        <label>
+                            <input name="answer" type="radio" value="${answers[4]}">${answers[4]}</input>
+                        </label>   
                         <input type="submit" value="submit answer"></input>
                     </form>`
 
     quizElement.style.display = "block"
+
     let form = quizElement.getElementsByTagName("form")[0]
-    form.addEventListener("submit",function(evt){
-        evt.preventDefault()
-        return form["answer"].value === correct_answer;
+    return new Promise((resolve) => {
+        form.addEventListener("submit", function (evt) {
+            evt.preventDefault()
+            //console.log(form["answer"].value)
+
+            resolve(form["answer"].value === correct_answer)
+
+
+        })
     })
 }
 
-// const quizData = quiz();
+/* const quizData = quiz();
 // console.log(quizData);
-
+*/
 // ___________________________________________________________________________________________
 
 // pelin pyöritys
@@ -161,28 +176,21 @@ async function runGame() {
     let distance = 0;
     let usedTime = 0;
     let co2Used = 0;
-    let airportData = await randomFly();
-    let currentAirport = airportData["airport name"];
-    let currentLatitude = airportData.latitude;
-    let currentLongitude = airportData.longitude;
-
-    /* DEBUG
-  console.log(currentAirport);
-  console.log(currentLatitude);
-  console.log(currentLongitude);
-  */
+    let currentAirport = await randomFly();
+    //let currentAirport = airportData["airport name"];
+    const planeModel = document.getElementById("planeModel").textContent
 
     // ALOITUS LENTOKENTÄN KARTTA-PIN näkymä
-    const map = L.map("map").setView([currentLatitude, currentLongitude], 12);
+    const map = L.map("map").setView([currentAirport.latitude, currentAirport.longitude], 12);
     L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
         attribution:
             '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     }).addTo(map);
 
     // ALOITUS KENTÄN PINNI KARTTAAN
-    L.marker([currentLatitude, currentLongitude])
+    L.marker([currentAirport.latitude, currentAirport.longitude])
         .addTo(map)
-        .bindPopup(`Starting Airport - ${currentAirport}`)
+        .bindPopup(`Starting Airport - ${currentAirport["airport name"]}`)
         .openPopup();
     /*
       // ISOJEN KENTTIEN PINNIEN TEKEMINEN - Ei iha wörki
@@ -208,7 +216,20 @@ async function runGame() {
 
       */
 
-    changeairportElement(currentAirport)
+while(true){
+   // console.log(await quiz())
+    if(await quiz()){
+        score++
+        let traveldata =  await travelingCo2(currentAirport,planeModel)
+        distance = distance + traveldata["distance"]
+        usedTime = usedTime + traveldata["flight_time"]
+        co2Used = co2Used + traveldata["co2"]
+        currentAirport = traveldata["next_airport"]
+        statUpdate(distance,co2Used,usedTime,currentAirport,score)
+    }
+}
+
+
 
 
 }
@@ -251,7 +272,7 @@ gameStartButton.onclick = function () {
     console.log("Welcome, " + name + "!");
     document.querySelector("#playerName").textContent = name;
 
-   runGame()  //Startin ja nimen jälkeen alotetaan peli
+     //Startin ja nimen jälkeen alotetaan peli
 };
 
 //plane model selection
@@ -276,16 +297,14 @@ function planeselection(evt) {
              airplaneModel = "Matti or Peyman";
              break;*/
     }
-
+    runGame()
 }
 
-function changeairportElement(airport) {
-const currentAirportElement = document.getElementById("currentAirport")
-    console.log(airport)
-    currentAirportElement.textContent = airport
-}
-function addpoint(){
-    const scoreElement = document.getElementById("points")
-    let newScore = parseInt(scoreElement.textContent) + 1
-    scoreElement.textContent = newScore
+
+function statUpdate(distance,co2,time,current_airport,score){
+    document.getElementById("distance").textContent = distance.toFixed(2)
+    document.getElementById("co2").textContent = co2.toFixed(2)
+    document.getElementById("time").textContent = time.toFixed(2)
+    document.getElementById("currentAirport").textContent = current_airport["airport_name"]
+    document.getElementById("points").textContent = score
 }
