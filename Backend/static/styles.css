@@ -160,6 +160,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin: auto;
+    margin-left: 8%; /* PELIBOXIN MARGINI VASEMMALT*/
     background-color: var(--grape-kiss);
     border-width: 4px;
     border-style: solid;
