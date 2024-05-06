@@ -241,6 +241,7 @@ while(true){
     }
     else{
         document.getElementById("quiz").style.display = "none" //hides quiz when answer was incorrect
+        document.getElementById("quitScreen").style.display = "block"
         break
     }
 }
