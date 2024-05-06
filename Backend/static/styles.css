@@ -224,6 +224,30 @@ body {
     padding: 0em;
 }
 
+.quitScreen {
+    width: 20rem;
+    background: white;
+    border-color: black;
+    border-style: solid;
+    border-radius: 1px;
+    position: absolute;
+    top: 50%; /*korkeus*/
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 0 30px 30px;
+    color: #333;
+    z-index: 1000; /*TÄÄ TUO SEN TON MÄPIN PÄÄLLE*/
+}
+
+.quitScreen h1 {
+    font-size: 33px;
+    font-weight: bold;
+}
+
+.quitScreen p {
+    font-size: 20px;
+}
 
 
 /* ------------------------------------------
