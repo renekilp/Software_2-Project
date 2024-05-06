@@ -220,6 +220,13 @@ body {
 .gameSection2 {
     display: block;
     font-size: 18px;
+    text-align: center;
+    background-color: white;
+    margin: 3px;
+    padding-bottom: 1em;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
 }
 .gameSection2 h2 {
     color: black;
