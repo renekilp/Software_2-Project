@@ -213,11 +213,14 @@ body {
 
 .maplayout {
     text-align: center;
-    width: 100%;
+    width: 80%;
     height: 100%;
+    padding-left: 2rem;
 }
 /* mäppi id shitit*/
 #map {
+    border-style: inset;
+    border-width: thick;
     width: 100%;
     height: 100%;
     margin: 0em;
