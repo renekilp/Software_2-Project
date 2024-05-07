@@ -220,6 +220,10 @@ body {
 .modelChoice {
     color: black;
 }
+.modelChoice p {
+    text-align: left;
+    padding: 0.5em;
+}
 
 .gameSection2 {
     display: block;
