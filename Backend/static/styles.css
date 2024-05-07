@@ -1,10 +1,10 @@
 @font-face {
-    font-family: Jersey;
-    src: url("../static/font/Jersey25-Regular.ttf") format("truetype");
+    font-family: Jaro;
+    src: url("../static/font/Jaro-Regular-VariableFont_opsz.ttf") format("truetype");
 }
 
  html {
-     font-family: Jersey, serif;
+     font-family: Jaro, serif;
     color: var(--bundaberg-sand);
     cursor: url(../static/images/airplanecursor.svg), auto;
 }
