@@ -224,6 +224,7 @@ while(true){
         endstats(distance,co2Used,usedTime,score)
         document.getElementById("saveScore").addEventListener("click", function() {
             addScore(document.getElementById("playerName").textContent,score)
+            alert("Your score has been added to the leaderboard!")
             window.location.reload()
         })
         document.getElementById("retryButton").addEventListener("click",function(){
