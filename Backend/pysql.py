@@ -1,7 +1,6 @@
 import mysql.connector
 import random
 from geopy.distance import geodesic
-from colorama import Fore, Back, Style
 
 connection = mysql.connector.connect(
     host="localhost",
