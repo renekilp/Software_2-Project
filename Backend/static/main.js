@@ -30,7 +30,6 @@ async function addScore(playerName, score) {
         const data = await response.json();
         return data;
     } catch (error) {
-        alert("Error adding score! Can't connect to the server! :(")
         console.error("Error adding score:", error);
         throw error;
     }
