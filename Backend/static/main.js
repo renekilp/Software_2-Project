@@ -3,7 +3,6 @@ async function airports() {
         //kokeilee hakea tietoa
         const response = await fetch("http://127.0.0.1:3000/large_airports");
         const data = await response.json();
-        // console.log(data);
         return data; //palauttaa fetchillä haetut tiedot
     } catch (error) {
         // keskeyttää jos tapahtuu error
@@ -29,7 +28,6 @@ async function addScore(playerName, score) {
         const url = `http://127.0.0.1:3000/addscore/${playerName}/${score}`;
         const response = await fetch(url);
         const data = await response.json();
-        console.log(data);
         return data;
     } catch (error) {
         alert("Error adding score! Can't connect to the server! :(")
@@ -41,7 +39,6 @@ async function addScore(playerName, score) {
 async function randomFly() {
     try {
         const response = await fetch("http://127.0.0.1:3000/random_flight")
-        // console.log(data);
         return await response.json();
     } catch (error) {
         alert("Error fetching random question! Can't connect to the server! :(")
@@ -55,7 +52,6 @@ async function travelingCo2(userAirport, airplaneModel) {
         const url = `http://127.0.0.1:3000/travel_co2/${userAirport.latitude}/${userAirport.longitude}/${airplaneModel}`;
         const response = await fetch(url);
         const data = await response.json();
-        console.log(data);
         return data;
     } catch (error) {
         alert("Error fetching CO2 data! Can't connect to the server! :(")
@@ -68,7 +64,6 @@ async function topPlayers() {
     try {
         const response = await fetch("http://127.0.0.1:3000/top_players");
         const data = await response.json();
-        console.log(data);
         return data;
     } catch (error) {
         alert("Error fetching random question! Can't connect to the server! :(")
@@ -101,7 +96,6 @@ function planeInfo() {
 async function quiz() {
     const questionsData = await questions(); //hakee kysymys sanakirjan
     const quizElement = document.getElementById("quiz");
-    //console.log(questionsData)
     const {
         question,
         correct_answer,
@@ -123,12 +117,6 @@ async function quiz() {
         const j = Math.floor(Math.random() * (i + 1));
         [answers[i], answers[j]] = [answers[j], answers[i]];
     }
-    /* console logeja debugaamista varten
-    console.log("Question:", question);
-    console.log("Shuffled Answers:");
-    answers.forEach((answer, index) => {
-        console.log(`${index + 1}. ${answer}`);
-    });*/
 
     quizElement.innerHTML = `                    <h2 id="question">${question}</h2>
                     <form>
@@ -156,7 +144,6 @@ async function quiz() {
     return new Promise((resolve) => {
         form.addEventListener("submit", function (evt) {
             evt.preventDefault()
-            //console.log(form["answer"].value)
 
             resolve(form["answer"].value === correct_answer)
 
@@ -164,10 +151,6 @@ async function quiz() {
         })
     })
 }
-
-/* const quizData = quiz();
-// console.log(quizData);
-*/
 // ___________________________________________________________________________________________
 
 // pelin pyöritys
