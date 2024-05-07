@@ -15,7 +15,7 @@ Projektin tarkoituksena oli kehittää alkuperäistä Ohjelmisto 1-kurssin proje
 - Luo tietokanta ```lentopeli.sql``` tiedostolla.
 -> tietokannan käyttäjätunnukseksi: ```root``` ja salasanaksi: ```root```
 - Tarvittavat Python-kirjastot: ```mysql.connector```, ```geopy```,```flask```,```flask-cors```
-- Aja ```main.py``` ja avaa ```main.html``` tiedosto.
+- Aja ```main.py``` ja avaa ```main.html```tiedosto -> ```Backend/templates/``` kansiossa .
 - Peli nautintoja!
 
 
