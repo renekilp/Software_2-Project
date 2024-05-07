@@ -217,6 +217,10 @@ body {
     border-color: black;
 }
 
+.modelChoice {
+    color: black;
+}
+
 .gameSection2 {
     display: block;
     font-size: 18px;
