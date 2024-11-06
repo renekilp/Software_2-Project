@@ -1,33 +1,31 @@
-README.md kirjoittanut Onni Kivinen
-# Ohjelmisto 2-kurssin Projekti
+# Software 2 Course Project
 
 ![alt text](flightquiztitle2.png)
 
-Tämä on Metropolian Tieto- ja Viestintätekniikan Ohjelmisto 2-kurssin lentopeliprojektin repository, joka on toteutettu kurssin loppuprojektina. 
-Projektin tarkoituksena oli kehittää alkuperäistä Ohjelmisto 1-kurssin projektia, rakentamalla pelille Frontend.
+This is the repository for the flight game project for the Software 2 course at Metropolia University of Applied Sciences' Information and Communication Technology program, created as the final project for the course. The purpose of the project was to develop the original Software 1 course project by building a frontend for the game.
 
-###    Projektin kehittäjinä:
-- Eemil Nurmi
-- Rene Kilpeläinen
-- Onni Kivinen
-- Patrik Skogberg
-## Toiminta ohjeet pelin ajamiseen
-- Luo tietokanta ```lentopeli.sql``` tiedostolla.
--> tietokannan käyttäjätunnukseksi: ```root``` ja salasanaksi: ```root```
-- Tarvittavat Python-kirjastot: ```mysql.connector```, ```geopy```,```flask```,```flask-cors```
-- Aja ```main.py``` ja avaa ```main.html```tiedosto -> ```Backend/templates/``` kansiossa .
-- Peli nautintoja!
+###    Project Developers:
+- [Eemil Nurmi](https://github.com/Scratch4u2)
+- [Rene Kilpeläinen](https://github.com/renekilp)
+- [Onni Kivinen](https://github.com/onnikiv)
+- [Patrik Skogberg](https://github.com/Skogbergp)
+  
+## Instructions for Running the Game
+- Create the database using the ```lentopeli.sql``` file.
+-> set the database username to: ```root``` and password to: ```root```
+- Required Python libraries: ```mysql.connector```, ```geopy```,```flask```,```flask-cors```
+- Run ```main.py``` and open the ```main.html```file -> located in the ```Backend/templates/``` folder.
+- Enjoy the game!
 
 
-## Tietokanta
-#### (Kuva) Tietokannan relaatiomallista 
+## Database
+#### (Kuva) Relational model of the database
 ![alt text](flight_game_relation_model.png)
 
-#### Taulu: questions-, ja high_score lisätty alkuperäiseen flight_game tietokantaan.
+#### Tables: questions- and high_score added to the original flight_game database.
 
-## Tietokannan sql-koodi
-##### Tietokannan sql-koodi ilman dataa.
-
+## Database SQL Code
+##### SQL code for the database without data.
 ```sql
 -- --------------------------------------------------------
 -- Verkkotietokone:              127.0.0.1
